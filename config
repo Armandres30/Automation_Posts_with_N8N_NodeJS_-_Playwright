@@ -1,0 +1,9 @@
+{
+	"encryptionKey": "2UUvnUSUmPFLAh47qWTYmUprBAlr9PhG",
+	"nodes": [
+        {
+            "name": "TikTok",
+            "type": "n8n-nodes-base.tikTok"
+        }
+    ]
+}
