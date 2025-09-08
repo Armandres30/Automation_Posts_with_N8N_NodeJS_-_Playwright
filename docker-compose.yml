@@ -1,0 +1,14 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: new-n8n-project
+    ports:
+      - "5678:5678"  # Map host port 5678 to container port 5678
+    volumes:
+      - ./n8n:/home/node/.n8n  # Mount a local folder to persist data
+    environment:
+      - N8N_PROTOCOL=https  # Set the protocol
+      - N8N_SSL_KEY=.n8n/certificates/privkey.pem  # Path to SSL key
+      - N8N_SSL_CERT=.n8n/certificates/cert.pem  # Path to SSL key
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem  # Store binary data on the filesystem
+      - NODE_FUNCTION_ALLOW_BUILTIN=fs # Allow fs module in Function node
